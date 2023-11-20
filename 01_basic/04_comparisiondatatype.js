@@ -9,3 +9,12 @@
 console.log(null > 0); // false
 console.log(null == 0);// false
 console.log(null >= 0);//true
+
+
+
+// 7 type like string number boolean null undefined symboll     PRIMITIVE DATA TYPE
+
+
+// NON PRIMITIVE TYPE LIKE
+// Array
+// object 
