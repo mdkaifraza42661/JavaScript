@@ -15,6 +15,15 @@ console.log(null >= 0);//true
 // 7 type like string number boolean null undefined symboll     PRIMITIVE DATA TYPE
 
 
-// NON PRIMITIVE TYPE LIKE
+// NON PRIMITIVE TYPE LIKE refrence type
 // Array
 // object 
+// function 
+const arr = ["mithoon", "amit", "kaif"];
+
+const obj = {
+    name: "kaif",
+    age: 23,
+    Number: 12548
+}
+
