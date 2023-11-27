@@ -31,5 +31,5 @@ console.log(date.getTimezoneOffset());
 
 
 date.toLocaleString('default', {
-    minute: 25,
+    minute: 5,
 })
