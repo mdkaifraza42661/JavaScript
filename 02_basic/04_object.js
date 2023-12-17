@@ -40,9 +40,54 @@ const obj2 = {
 // @param target — The target object to copy to.
 
 // @param source — The source object from which to copy properties.
-const obj3 = Object.assign({}, obj1, obj2)
+
+
+
+
+// const obj3 = Object.assign({}, obj1, obj2)
+
+const obj3 = {...obj1, ...obj2}
+
+
 console.log(obj3);
 
 
-///////////
-kaiof
+// coming from server 
+const user1 = [
+    {
+        id: 1,
+        email: "kaif@786",
+    },
+    {
+        id: 1,
+        email: "kaif@786",
+    },
+    {
+        id: 1,
+        email: "kaif@786",
+    },
+    {
+        id: 1,
+        email: "kaif@786",
+    },
+    {
+        id: 1,
+        email: "kaif@786",
+    },
+];
+
+
+
+
+
+// extract the key on the object in the help of keys 
+
+console.log(Object.keys(newUser));
+
+
+// extract the key on the object in the help of value 
+console.log(Object.values(newUser));
+// extract the key on the object in the help of entries 
+console.log(Object.entries(newUser));
+
+console.log(newUser.hasOwnProperty('email'));
