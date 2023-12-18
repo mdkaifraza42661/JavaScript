@@ -9,4 +9,12 @@ kaif();
 
 (function kaif() {
     console.log("Db Connected");
+})();
+
+
+
+(function kaif() {
+    console.log("Db Connected seond");
 })()
+
+/// arrow function
