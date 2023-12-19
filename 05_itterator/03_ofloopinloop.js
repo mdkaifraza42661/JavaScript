@@ -1,4 +1,5 @@
 ///for of loop
+// DONOT WORK FOR OF LOOP IN  A OBJECT  IN JAVASCRIPT 
 
 // ["","",""]
 // [{},{},{}]
@@ -33,7 +34,7 @@ map.set("FR", "France")
 //   }
 
 for(const value of map) {
-    console.log(value);
+    //console.log(value);
 }
 // // output 
 // [ 'IN', 'India' ]
@@ -45,7 +46,7 @@ for(const value of map) {
 
 // destructure  of Array
 for(const [key, value] of map) {
-    console.log(value, key);
+    //console.log(value, key);
 }
 
 
@@ -61,3 +62,41 @@ const newobj = {
 // for(const iterator of newobj) {
 //     console.log(iterator);
 // }
+
+
+
+
+
+// FOR IN LOOP 
+//  WORK FOR IN LOPP IN  A OBJECT  IN JAVASCRIPT 
+// ITS WORK IN ARRAY AND RETURN DIRECTLY KEY NOT VALUE  
+
+
+
+const lang = {
+    js: "javasript",
+    java: "java",
+    swift: "swift"
+}
+for(const key in lang) {
+    //console.log(`${key} shortcut value in langauge ${lang[key]}`);
+}
+
+const lng = ["English", "Hindi", "Math", "Science"]
+
+
+for(const key in lng) {
+    // console.log(key);
+    // output 
+    // 0 1 2 3
+
+    //console.log(lng);
+    // output 
+    //     ['English', 'Hindi', 'Math', 'Science']
+    //     ['English', 'Hindi', 'Math', 'Science']
+    //     ['English', 'Hindi', 'Math', 'Science']
+    //     ['English', 'Hindi', 'Math', 'Science']
+    console.log(lng[key]);
+    // output
+    // English Hindi Math Science
+}
