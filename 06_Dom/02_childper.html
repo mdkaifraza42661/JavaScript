@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM menuBar hovring</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        background-color: rgb(0, 0, 0);
+        color: wheat;
+    }
+
+    span {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="parent">
+        <div class="day">Mon <span class="one">one</span></div>
+        <div class="day">Tues <span class="two">two</span></div>
+        <div class="day">wed <span class="three">three</span></div>
+        <div class="day">thus <span class="four">four</span></div>
+    </div>
+
+
+</body>
+<script>
+    const per = document.querySelector(".parent")
+    const spn = document.querySelectorAll('span')
+    // console.log(per.children);
+    // console.log(per);
+
+    // per.children.length we find the length of the child inside a div 
+
+
+
+    for(let i = 0; i < per.children.length; i++) {
+        per.children[i].addEventListener("mouseenter", () => {
+            per.children[i].style.color = "red"
+            per.children[i].style.cursor = "pointer"
+            spn[i].style.display = "block"
+
+
+        })
+        per.children[i].addEventListener("mouseleave", () => {
+
+            per.children[i].style.color = "white"
+            document.querySelector("span").style.display = "none"
+            spn[i].style.display = "none"
+            // per.children[i].style.Cursor = "pointer"
+
+        })
+    }
+</script>
+
+</html>
