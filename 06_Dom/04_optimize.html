@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimize way</title>
+</head>
+
+<body>
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function addlist(params) {
+        const li = document.createElement("li")
+        li.innerHTML = `${params}`;
+        document.querySelector('.language').appendChild(li)
+
+    }
+    addlist("python")
+    function applchild(list) {
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(list))
+        document.querySelector('.language').appendChild(li)
+    }
+    applchild("kaif")
+
+
+    //edit
+    const secondli = document.querySelector("li:nth-child(2)")
+    const newli = document.createElement('li').textContent = "dango"
+    secondli.replaceWith(newli)
+
+    const firstele = document.querySelector("li:nth-child(2)")
+    firstele.outerHTML = `<li>java</li>`
+
+
+    // remove
+    const lastlng = document.querySelector("li:last-child")
+    lastlng.remove()
+
+
+
+</script>
+
+</html>
