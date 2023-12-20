@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // create element
+    const div = document.createElement('div')
+    //add class
+    div.className = "main";
+    // add id
+    div.id = "MainId"
+    // create text to add the div
+    // div.innerText = "Kaif"
+    const text = document.createTextNode("kaif")
+    // add text inside the div element
+    div.appendChild(text)
+    // add where you can add the entire element
+    document.body.appendChild(div)
+    console.log(div);
+</script>
+
+</html>
