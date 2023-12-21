@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Switcher</title>
+</head>
+<style>
+    .button {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        border: 1px solid black;
+    }
+
+    #yellow {
+        background-color: yellow;
+    }
+
+    #purple {
+        background-color: purple;
+    }
+
+    #blue {
+        background-color: blue;
+    }
+
+    #white {
+        background-color: white;
+    }
+
+    .dp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* flex-direction: row; */
+    }
+</style>
+
+<body>
+    <center>
+        <h1>Color Switcher</h1>
+    </center>
+    <center class="dp">
+
+        <span class="button" id="yellow"></span>
+        <span class="button" id="purple"></span>
+        <span class="button" id="blue"></span>
+        <span class="button" id="white"></span>
+    </center>
+
+</body>
+<script>
+    const buttons = document.querySelectorAll(".button");
+    const body = document.body
+    // console.log(body);
+    buttons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            if(e.target.id == "yellow") {
+
+                body.style.backgroundColor = e.target.id
+            }
+            if(e.target.id == "purple") {
+
+                body.style.backgroundColor = e.target.id
+            }
+            if(e.target.id == "blue") {
+
+                body.style.backgroundColor = e.target.id
+            }
+            if(e.target.id == "white") {
+
+                body.style.backgroundColor = e.target.id
+            }
+        })
+    })
+</script>
+
+</html>
