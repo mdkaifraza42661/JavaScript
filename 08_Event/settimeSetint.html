@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SettimeoutSetIntervals</title>
+</head>
+
+<body>
+    <div>
+        <p>lorem p</p>
+        <button id="stop">stop</button>
+        <button id="start">start</button>
+    </div>
+</body>
+<script>
+    const start = function start() {
+        document.querySelector("p").style.fontSize = "20px"
+    }
+    let stop1
+    const startbtn = document.querySelector('#start')
+    startbtn.addEventListener("click", () => {
+        stop1 = setInterval(start, 3000);
+        console.log("print");
+    })
+
+    function stop() {
+        clearInterval(stop1)
+    }
+
+    const stopbtn = document.querySelector("#stop").addEventListener("click", () => {
+        stop();
+        console.log("stop");
+    })
+
+
+
+</script>
+
+</html>
