@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .groupImage {
+        display: flex;
+        /* align-items: center; */
+        /* justify-content: center; */
+    }
+</style>
+
+<body>
+    <div class="conatiner">
+        <img height="200px" id="mainImage"
+            src="https://images.pexels.com/photos/4202325/pexels-photo-4202325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="">
+    </div>
+    <div class="groupImage">
+        <img height="200px"
+            src="https://images.pexels.com/photos/4202326/pexels-photo-4202326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="">
+        <img height="200px"
+            src="https://images.pexels.com/photos/4202321/pexels-photo-4202321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="">
+        <img height="200px"
+            src="https://images.pexels.com/photos/4862163/pexels-photo-4862163.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+            alt="">
+        <img height="200px"
+            src="https://images.pexels.com/photos/5566043/pexels-photo-5566043.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+            alt="">
+
+    </div>
+</body>
+<script>
+    const mainImage = document.querySelector("#mainImage")
+    // get image output NodeList 
+    const groupImage = document.querySelectorAll(".groupImage img")
+
+    // console.log(groupImage[0]);
+    // NodeList we run For Loop on  veraible all the index we get i 
+    for(let i = 0; i < groupImage.length; i++) {
+        groupImage[i].addEventListener("click", (e) => {
+            // console.log(e);
+            mainImage.src = e.target.src
+        })
+
+    }
+
+
+
+</script>
+
+</html>
