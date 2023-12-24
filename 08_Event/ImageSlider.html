@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slides img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        #prevBtn,
+        #nextBtn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 100;
+        }
+
+        #prevBtn {
+            left: 10px;
+        }
+
+        #nextBtn {
+            right: 10px;
+        }
+
+        /* Optional: Media Queries for further responsiveness */
+        @media screen and (max-width: 600px) {
+
+            #prevBtn,
+            #nextBtn {
+                padding: 5px;
+            }
+        }
+    </style>
+
+    <div class="slider">
+        <div class="slides">
+            <img src="https://images.pexels.com/photos/4202321/pexels-photo-4202321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Image 1">
+            <img src="https://images.pexels.com/photos/4862163/pexels-photo-4862163.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                alt="Image 2">
+            <img src="https://images.pexels.com/photos/4202321/pexels-photo-4202321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Image 3">
+            <img src="https://images.pexels.com/photos/4202321/pexels-photo-4202321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Image 3">
+            <!-- Add more images as needed -->
+        </div>
+        <button id="prevBtn">Prev</button>
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const slider = document.querySelector('.slides');
+            let currentIndex = 0;
+            const slides = document.querySelectorAll('.slides img');
+            const slideCount = slides.length;
+            const slideWidth = slides[0].clientWidth;
+            let interval = null;
+
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            function moveToSlide(index) {
+                slider.style.transform = `translateX(-${index * slideWidth}px)`;
+            }
+
+            function startSlider() {
+                interval = setInterval(function() {
+                    currentIndex = (currentIndex + 1) % slideCount;
+                    moveToSlide(currentIndex);
+                }, 3000); // Change image every 3 seconds
+            }
+
+            function stopSlider() {
+                clearInterval(interval);
+            }
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                moveToSlide(currentIndex);
+                stopSlider();
+                startSlider();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slideCount;
+                moveToSlide(currentIndex);
+                stopSlider();
+                startSlider();
+            });
+
+            startSlider();
+        });
+
+    </script>
+</body>
+
+</html>
