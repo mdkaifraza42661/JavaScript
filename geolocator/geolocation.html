@@ -1,0 +1,36 @@
+<!-- <!DOCTYPE html>     -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEOLOCATION IN YOUR BROWSER</title>
+</head>
+
+<body>
+    <div class="conatiner">
+        <h1>your location in javascript</h1>
+        <button id="getlocation">GetLoaction</button>
+        <p id="currentloaction">Your Location</p>
+    </div>
+    <script>
+        console.log(navigator.appName)
+        console.log(navigator.appVersion)
+        console.log(navigator.appCodeName);
+        console.log(navigator.vendor);
+        console.log(navigator.locks);
+        console.log(navigator.cookieEnabled);
+        console.log(navigator.maxTouchPoints);
+        const btn = document.querySelector('#getlocation')
+        const currentloaction = document.querySelector('#currentloaction')
+        btn.addEventListener('click', (e) => {
+            navigator.geolocation.getCurrentPosition((e) => {
+                currentloaction.innerHTML = "Latitude: " + e.coords.latitude +
+                    "<br>Longitude: " + e.coords.longitude;
+                // console.log(e.coords.latitude);
+            })
+        })
+    </script>
+</body>
+
+</html>
