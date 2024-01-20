@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="flex ">
+        <input type="textarea" placeholder="Please Enter Word">
+        <button id="speak">Click to speak</button>
+        <!-- <button id="Pause">pause Me</button> -->
+
+    </div>
+</body>
+<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+<script>
+    const btn = document.querySelector('#speak')
+    btn.addEventListener('click', () => {
+        const inpt = document.querySelector("input").value
+        const utterance = new SpeechSynthesisUtterance(inpt)
+        window.speechSynthesis.speak(utterance)
+    })
+    const pus = document.querySelector('#Pause')
+    let count = 0;
+    // pus.addEventListener('click', () => {
+    //     count = count + 1
+    //     // console.log(parseInt(count));
+    //     // alert("hi")
+    //     const inpt = document.querySelector("input").value
+    //     const utterance = new SpeechSynthesisUtterance(inpt)
+    //     window.speechSynthesis.pause(utterance)
+    //     // utterance.pause()
+    // })
+    // if(count == 1) {
+    //     pus.removeEventListener('click')
+    // }
+</script>
+
+</html>
