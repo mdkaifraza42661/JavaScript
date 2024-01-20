@@ -7,27 +7,40 @@
     <title>GEOLOCATION IN YOUR BROWSER</title>
 </head>
 
-<body>
-    <div class="conatiner">
-        <h1>your location in javascript</h1>
-        <button id="getlocation">GetLoaction</button>
-        <p id="currentloaction">Your Location</p>
+<body class="w-full h-full bg-blue-400 flex items-center justify-center">
+    <div class="conatiner border border-amber-400 p-8 rounded-lg drop-shadow-lg">
+        <h1 class="text-4xl capitalize font-bold py-4">your location in javascript</h1>
+        <button id="getlocation"
+            class="btn px-8 py-2 border rounded-full uppercase bg-yellow-500 text-white bold border-none  hover:bg-sky-700 border-shadow-xl">GetLoaction</button>
+        <p id="currentloaction" class="py-4 text-xl">Your Location</p>
     </div>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        console.log(navigator.appName)
-        console.log(navigator.appVersion)
-        console.log(navigator.appCodeName);
-        console.log(navigator.vendor);
-        console.log(navigator.locks);
-        console.log(navigator.cookieEnabled);
-        console.log(navigator.maxTouchPoints);
+        // console.log(navigator.appName)
+        // console.log(navigator.appVersion)
+        // console.log(navigator.appCodeName);
+        // console.log(navigator.vendor);
+        // console.log(navigator.locks);
+        // console.log(navigator.cookieEnabled);
+        // console.log(navigator.maxTouchPoints);
+        // console.log(navigator.geolocation.clearWatch);
         const btn = document.querySelector('#getlocation')
         const currentloaction = document.querySelector('#currentloaction')
+        // btn.addEventListener('click', (e) => {
+        //     navigator.geolocation.getCurrentPosition((e) => {
+        //         currentloaction.innerHTML = "Latitude: " + e.coords.latitude +
+        //             "<br>Longitude: " + e.coords.longitude;
+
+        //     })
+        // })
+        const getusecorentloation = (latitude, longitude) => {
+            console.log(latitude, longitude);
+        }
         btn.addEventListener('click', (e) => {
-            navigator.geolocation.getCurrentPosition((e) => {
+            navigator.geolocation.watchPosition((e) => {
                 currentloaction.innerHTML = "Latitude: " + e.coords.latitude +
                     "<br>Longitude: " + e.coords.longitude;
-                // console.log(e.coords.latitude);
+                getusecorentloation(e.coords.latitude, e.coords.longitude)
             })
         })
     </script>
